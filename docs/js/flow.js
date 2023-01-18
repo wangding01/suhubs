@@ -1,14 +1,22 @@
-function flowBuilder() {
-    const flowList = document.getElementsByClassName('lang-flow')
+var initFlag = false;
+function isInit(fun) {
+    if (window) {
+        //---
+    }
+}
+function flowBuilder(html) {
+    const flowList = $(document).find('.lang-flow');
     let arr = [];
     for (let index = 0; index < flowList.length; index++) {
         const element = flowList[index];
-        arr.push(element.textContent)
-
+        const chart = flowchart.parse(element.textContent);
+        $(element).html(` <div id="canvas${index}"></div>`);
+        drawSVG(chart, 'canvas' + index)
     }
-    console.log("======", arr);
-    const chart = flowchart.parse(arr[0]);
-    chart.drawSVG('canvas', {
+}
+
+function drawSVG(chart, id) {
+    chart.drawSVG(id, {
         // 'x': 30,
         // 'y': 50,
         'line-width': 3,
