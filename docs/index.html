@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -7,20 +8,82 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js"
+    integrity="sha512-emJotoOTtLFZ0H1ruR4v5pqW1mSen/JQCnjD4mcXwDT1sfZQmtqUDYv36X2S/iSun0kpgvvmBUWqpAupN104Kw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/flow.js"></script>
 </head>
+
+
 <body>
+  <div style="width: 300px; height: 200px; color:red;background-color: #FFCCFF; z-index: 10000; position: fixed;">
+    gxsajh sadjkadg jaskdgaskdgsadagd sajkdgsakjg
+    <div id="canvas"></div>
+    ====
+  </div>
+
   <div id="app"></div>
+
   <script>
     window.$docsify = {
       name: '',
-      repo: ''
+      repo: '',
+      plugins: [
+        function (hook, vm) {
+          hook.init(function () {
+            // 初始化完成后调用，只调用一次，没有参数。
+          });
+
+          hook.beforeEach(function (content) {
+            // 每次开始解析 Markdown 内容时调用
+            // ...
+            return content;
+          });
+
+          hook.afterEach(function (html, next) {
+            // 解析成 html 后调用。
+            // beforeEach 和 afterEach 支持处理异步逻辑
+            // ...
+            // 异步处理完成后调用 next(html) 返回结果
+            next(html);
+            flowBuilder()
+
+
+
+          });
+
+          hook.doneEach(function () {
+            // 每次路由切换时数据全部加载完成后调用，没有参数。
+            // ...
+          });
+
+          hook.mounted(function () {
+            // 初始化并第一次加载完成数据后调用，只触发一次，没有参数。
+          });
+
+          hook.ready(function () {
+            // 初始化并第一次加载完成数据后调用，没有参数。
+          });
+        }
+      ]
     }
+
+
   </script>
   <script>
     console.log("===你把隧道撒谎===");
   </script>
   <!-- Docsify v4 -->
+
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+
 </body>
+
 </html>
+
+<style type="text/css">
+  .end-element {
+    fill: #FFCCFF;
+  }
