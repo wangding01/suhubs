@@ -1,0 +1,26 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "GithubPage: [https://hongxiangwang.github.io/docsify-demo/#/](https://hongxiangwang.github.io/docsify-demo/#/)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "tsc --watch & docsify serve ./docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongxiangWang/docsify-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hongxiangWang/docsify-demo/issues"
+  },
+  "homepage": "https://github.com/hongxiangWang/docsify-demo#readme",
+  "dependencies": {
+    "docsify": "^4.13.0"
+  }
+}

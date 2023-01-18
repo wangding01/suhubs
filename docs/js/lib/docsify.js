@@ -1,6 +1,6 @@
 function docsifyBuilder() {
     window.$docsify = {
-        name: '',
+        name: '一个实例',
         repo: 'https://hongxiangwang.github.io/docsify-demo/',
         plugins: [
             function (hook, vm) {
@@ -20,9 +20,9 @@ function docsifyBuilder() {
                     // ...
                     // 异步处理完成后调用 next(html) 返回结果
                     next(html);
-                    setTimeout(() => {
-                        flowBuilder(html)
-                    }, 10);
+                    flowBuilder(html);
+                    sequenceBuilder(html);
+                    mermaidBuilder(html)
 
                 });
 

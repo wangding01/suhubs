@@ -7,36 +7,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"
-    integrity="sha256-TabprKdeNXbSesCWLMrcbWSDzUhpAdcNPe5Q53rn9Yg=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js"
-    integrity="sha512-emJotoOTtLFZ0H1ruR4v5pqW1mSen/JQCnjD4mcXwDT1sfZQmtqUDYv36X2S/iSun0kpgvvmBUWqpAupN104Kw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="./js/flow.js"></script>
-  <script src="./js/docsify.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- flow -->
+  <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+  <script src="./js/flow/flowchart.min.js"></script>
+  <!-- sequence -->
+  <script src="./js/sequence/webfont.js"></script>
+  <script src="./js/sequence/snap.svg-min.js"></script>
+  <script src="./js/sequence/underscore.min.js"></script>
+  <script src="./js/sequence/sequence-diagram-min.js"></script>
+
+  <!-- mermaid -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+  <script src="./js/lib/docsify.js"></script>
+  <script src="./js/lib/flow.js"></script>
+  <script src="./js/lib/sequence.js"></script>
+  <script src="./js/lib/mermaid.js"></script>
+  <script src="./js/lib/builder.js"></script>
+
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 
 <body>
- 
+
 
   <div id="app"></div>
 
   <script>
-    docsifyBuilder()
-  </script>
-  <script>
-    console.log("===你把隧道撒谎===");
   </script>
   <!-- Docsify v4 -->
 
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script>
+    builderInit()
+  </script>
 
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    import mindmap from 'https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-mindmap@9/dist/mermaid-mindmap.esm.min.mjs';
+    await mermaid.registerExternalDiagrams([mindmap]);
+    mermaid.initialize({ startOnLoad: true });
+  </script>
 
 </body>
 

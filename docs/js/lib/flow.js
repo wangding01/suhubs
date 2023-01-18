@@ -1,18 +1,13 @@
-var initFlag = false;
-function isInit(fun) {
-    if (window) {
-        //---
-    }
-}
+
 function flowBuilder(html) {
     const flowList = $(document).find('.lang-flow');
-    let arr = [];
     for (let index = 0; index < flowList.length; index++) {
         const element = flowList[index];
         const chart = flowchart.parse(element.textContent);
-        $(element).html(` <div id="canvas${index}"></div>`);
-        drawSVG(chart, 'canvas' + index)
+        $(element).html(` <div id="flow${index}"></div>`);
+        drawSVG(chart, 'flow' + index)
     }
+    return html;
 }
 
 function drawSVG(chart, id) {
