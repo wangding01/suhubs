@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "tsc --watch & docsify serve ./docs",
+    "dev": " docsify serve ./docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

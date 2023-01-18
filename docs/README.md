@@ -173,13 +173,4 @@ gitGraph
    commit
 ```
 
-11. 思维导图
 
-```mermaid
-mindmap
-Root
-    A
-        B
-      C
-
-```

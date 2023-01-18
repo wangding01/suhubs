@@ -1,3 +1,4 @@
+
 function docsifyBuilder() {
     window.$docsify = {
         name: '一个实例',
@@ -39,7 +40,9 @@ function docsifyBuilder() {
                     // 初始化并第一次加载完成数据后调用，没有参数。
                 });
             }
-        ]
+        ],
+
+        
     }
 
 }
